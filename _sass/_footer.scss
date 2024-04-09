@@ -1,0 +1,21 @@
+.footer {
+  @include flex(row, center, space-around);
+
+  height: $footer-height;
+  padding: 1rem;
+
+  @media (max-width: $sm) {
+    height: auto;
+  }
+
+  .copy {
+    @include flex(column, center, center);
+
+    i {
+      color: darken($white, 20%);
+      font-size: 0.75em;
+      font-style: normal;
+      margin-top: 0.5rem;
+    }
+  }
+}

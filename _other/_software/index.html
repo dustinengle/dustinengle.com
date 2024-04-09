@@ -1,0 +1,57 @@
+---
+layout: page
+title: Software Engineering
+---
+
+<div class="cells">
+  {% for category in site.data.software.categories %}
+  <div class="cell third">
+    {% if category != 'design-pattern' %}
+      <h2>
+        {% assign words = category | split: '-' %}
+        {% for word in words %}
+          {{ word | capitalize }}
+        {% endfor %}
+      </h2>
+    {% endif %}
+    {% assign posts = site.software | where_exp: 'post', 'post.category == category' %}
+    {% if posts.size > 0 %}
+      {% if category == 'design-pattern' %}
+      {% else %}
+        <ul>
+          {% for post in posts %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% else %}
+      Coming soon...
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="cells">
+  <div class="cell full">
+    <h2>
+      Design Patterns
+    </h2>
+  </div>
+  {% for pattern in site.data.software.patterns %}
+  <div class="cell third">
+    <h3>{{ pattern | capitalize }}</h3>
+    <ul>
+      {% assign posts = site.software | where_exp: 'post', 'post.category == "design-pattern"' %}
+      {% for post in posts %}
+      {% if post.tag == pattern %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

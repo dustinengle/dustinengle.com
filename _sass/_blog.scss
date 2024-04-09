@@ -1,0 +1,35 @@
+
+.article {
+  @include flex(row, flex-begin, space-between);
+
+  margin-top: 1rem;
+
+  @media (max-width: $sm) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .content {
+    background-color: lighten($black, 10%);
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .other {
+    @include flex(column, flex-begin, flex-begin);
+
+    padding: 0.5rem;
+
+    .recent {
+      .link {
+        @include flex(column, flex-begin, flex-begin);
+
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .navigation {
+    @include flex(row, center, space-between);
+  }
+}

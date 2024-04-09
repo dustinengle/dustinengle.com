@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+{% assign tags = page.tags | join: ',' | split: ',' | sort %}
+
+<div class="article">
+  <div class="content">
+    <h2>{{ page.title }}</h2>
+
+    {% include tags.html %}
+
+    {{ content }}
+
+    <div class="navigation">
+      {% if page.previous %}
+      <div class="prev">
+        &laquo; <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+      </div>
+      {% else %}
+      <div></div>
+      {% endif %}
+      {% if page.next %}
+      <div class="next">
+        <a href="{{ page.next.url }}">{{ page.next.title }}</a> &raquo;
+      </div>
+      {% else %}
+      <div></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="other">
+    <div class="recent">
+      <h3>Recent Posts</h3>
+      {% for post in site.related_posts limit:5 %}
+      <div class="link">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date_to_long_string }}
+        </time>
+      </div>
+      {% endfor %}
+    </div>
+    {% for tag in tags %}
+    <div class="recent">
+      <h3>{{ tag | capitalize }} Posts</h3>
+      {% for post in site.tags[tag] limit:5 %}
+      <div class="link">
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+          {{ post.date | date_to_long_string }}
+        </time>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

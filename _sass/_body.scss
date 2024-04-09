@@ -1,0 +1,11 @@
+
+.body {
+  margin: 0 auto;
+  margin-top: $menu-height;
+  overflow-y: auto;
+  width: 90vw;
+
+  @media (max-width: $sm) {
+    margin-top: $menu-height;
+  }
+}

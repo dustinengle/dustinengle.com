@@ -1,0 +1,33 @@
+---
+layout: page
+title: Cyber Security
+---
+
+<div class="cells">
+  {% for category in site.data.security.categories %}
+  <div class="cell third">
+    <h2>
+      {% if category == 'response-continuity-recovery' %}
+        Incident Response, Business Continuity, and Disaster Recovery
+      {% else %}
+        {% assign words = category | split: '-' %}
+        {% for word in words %}
+          {{ word | capitalize }}
+        {% endfor %}
+      {% endif %}
+    </h2>
+    {% assign posts = site.security | where_exp: 'post', 'post.category == category' %}
+    {% if posts.size > 0 %}
+      <ul>
+        {% for post in posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      Coming soon...
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>

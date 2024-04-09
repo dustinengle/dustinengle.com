@@ -1,0 +1,90 @@
+---
+category: software
+excerpt_separator: <!--more-->
+layout: post
+tags: [easy, array, hash table]
+title:  Three Sum
+---
+
+<p>Given an array of integers <b>nums</b> and an integer <b>target</b>, return indices of the two numbers such that they add up to <b>target</b>.</p>
+<!--more-->
+<p>You may assume that each input would have <b><i>exactly</i> one solution</b>, and you may not use the <i>same</i> element twice.</p>
+<p>You can return the answer in any order.</p>
+
+<b>Example 1</b>
+
+{% highlight make linenos %}
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+{% endhighlight %}
+
+<b>Example 2</b>
+
+{% highlight make linenos %}
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+{% endhighlight %}
+
+<b>Example 3</b>
+
+{% highlight make linenos %}
+Input: nums = [3,3], target = 6
+Output: [0,1]
+{% endhighlight %}
+
+<p>Come up with an algorithm that is less than \(O(n^2)\) time complexity.</p>
+
+<h3>Constraints</h3>
+
+<ul>
+  <li>\(2 <= nums.length <= 10^4\)</li>
+  <li>\(-10^9 <= nums[i] <= 10^9\)</li>
+  <li>\(-10^9 <= target <= 10^9\)</li>
+  <li><b>Only one valid answer exists.</b></li>
+</ul>
+
+<h2>Solution</h2>
+
+<h3>Steps</h3>
+
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+  <li>Third step \(a * b = a ^ b\)</li>
+</ol>
+
+<h3>Complexity</h3>
+
+<ul>
+  <li>Space: \(O(1)\)</li>
+  <li>Time: \(O(n \log n)\)</li>
+</ul>
+
+<h3>Code</h3>
+
+<div class="tabs">
+  <div class="tab active" onclick="showPanel(this, 'go')">Go</div>
+  <div class="tab" onclick="showPanel(this, 'rust')">Rust</div>
+  <div class="tab flex"></div>
+</div>
+<div id="go" class="panel active">
+{% highlight go linenos %}
+package main
+
+import "fmt"
+
+func main() {
+  fmt.Println("Hello world!")
+}
+{% endhighlight %}
+</div>
+<div id="rust" class="panel">
+{% highlight rust linenos %}
+fn main() {
+  println!("Hello world!");
+}
+{% endhighlight %}
+</div>
+
+$$a * b = a ^ b$$

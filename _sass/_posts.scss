@@ -1,0 +1,28 @@
+
+.posts {
+  .post {
+    background-color: lighten($black, 10%);
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    .excerpt {
+      font-size: 1.25rem;
+    }
+
+    .head {
+      @include flex(row, center, space-between);
+
+      margin-bottom: 0.5rem;
+
+      .date {
+        color: $yellow;
+        font-size: 1rem;
+      }
+
+      .title {
+        @include flex(row, center, space-between);
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

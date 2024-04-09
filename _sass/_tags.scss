@@ -1,0 +1,14 @@
+
+.tags {
+  @include flex(row, center, flex-begin);
+
+  margin-bottom: 1rem;
+
+  .tag {
+    background-color: $blue;
+    border-radius: 1rem;
+    color: $white;
+    margin: 0.5rem 0.25rem 0 0;
+    padding: 0.5rem 0.5rem;
+  }
+}
