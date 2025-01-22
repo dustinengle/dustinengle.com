@@ -1,0 +1,32 @@
+
+.construction {
+  img {
+    height: auto;
+    width: 90vw;
+  }
+}
+
+.column {
+  @include flex(column, flex-begin, flex-begin);
+
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.margin {
+  margin: 1rem;
+
+  &-bottom {
+    margin-bottom: 1rem;
+  }
+}
+
+.row {
+  @include flex(row, flex-begin, space-between);
+
+  @media (max-width: $sm) {
+    flex-direction: column;
+    height: auto;
+  }
+}

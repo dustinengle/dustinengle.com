@@ -1,0 +1,31 @@
+
+baseurl: ""
+permalink: /blog/:categories/:title
+url: "https://dustinengle.com"
+
+author:
+  email: dustin.engle@gmail.com
+  name: Dustin Engle
+description: View my resume and learn with me.
+title: Dustin's Blog
+
+encoding: utf-8
+highlighter: rouge
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - kramdown
+sass:
+  sass_dir: _sass
+  style: compact
+
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+timezone: America/Los_Angeles
+year: 2024
+
+paginate: 10
+paginate_path: /blog/page/:num

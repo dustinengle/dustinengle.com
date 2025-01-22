@@ -1,0 +1,12 @@
+<div class="tags">
+  {% assign categories = site.categories | sort %}
+  {% for category in categories %}
+  {% capture cat %}
+    {% assign words = category | first | split:'-' %}
+    {% for word in words %}
+      {{ word | capitalize }}
+    {% endfor %}
+  {% endcapture %}
+  <div class="tag">{{ cat }}</div>
+  {% endfor %}
+</div>

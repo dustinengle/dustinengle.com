@@ -1,0 +1,70 @@
+---
+layout: home
+---
+
+<div class="page">
+  <div class="content">
+    <h1>Welcome to Dustin's Blog!</h1>
+    <p class="bold">
+      I'm here to be your guide through the ever-evolving world of technology and engineering.
+      I'm passionate about sharing knowledge and fostering growth in a
+      variety of exciting fields, including Blockchain, Artificial Intelligence, Design Patterns,
+      Data Structures, Distributed Computing, Algorithms, and Mathematics.
+    </p>
+
+    <div class="row">
+      <div class="column">
+        <h2>My Goals</h2>
+        <h3>Learning and Education</h3>
+        <p>
+          My primary goal is to serve as your dedicated learning hub,
+          offering comprehensive articles, tutorials, and resources to deepen your understanding
+          and expertise in various technological domains.
+        </p>
+        <h3>Job Interview Preparation</h3>
+        <p>
+          I understand the challenges of the software engineering job
+          interview process. That's why I'm committed to providing you with invaluable insights,
+          tips, and guidance to help you confidently navigate interviews and secure your ideal position.
+        </p>
+        <h3>Blockchain Development</h3>
+        <p>
+          Explore the fascinating realm of blockchain technology
+          with my step-by-step tutorials on building blockchains from scratch. Whether you're new
+          to blockchain or an experienced developer, my practical guides empower you to create robust
+          and scalable blockchain solutions.
+        </p>
+        <h3>AI Framework Construction</h3>
+        <p>
+          Let's unravel the mysteries of Artificial Intelligence together.
+          I'll walk you through constructing AI frameworks from the ground up, empowering you to
+          design and implement AI algorithms with confidence and skill.
+        </p>
+      </div>
+      <div class="column">
+        <h2>Categories</h2>
+        {% include categories.html %}
+        <h2>Tags</h2>
+        {% assign site_tags = site.tags | sort %}
+        {% capture tag_list %}
+          {% for tag in site_tags %}
+            {% assign words = tag | first | split:' ' %}
+            {% for word in words %}
+              {{ word | capitalize }}
+            {% endfor %}
+            {% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        {% endcapture %}
+        {% assign tags = tag_list | split:',' %}
+        {% include tags.html %}
+        <blockquote>
+          "Join me on this exciting journey of discovery and empowerment as we navigate the frontiers
+          of technology together. Start exploring, start learning, and let's shape the future,
+          one byte at a time."<br />
+          <br />
+          - Dustin Engle
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
